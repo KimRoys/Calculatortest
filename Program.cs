@@ -152,19 +152,14 @@ namespace Calculatortest
                         userInput1 = GetNumberFromUser();
                         Console.WriteLine("\nSkriv in ditt andra tal och tryck enter:");
                         userInput2 = GetNumberFromUser();
+                                                
+                        
 
-                        res = Division(userInput1, userInput2);
-                        if (res != -1)
-                        {
+                            res = Division(userInput1, userInput2);
                             Console.WriteLine(userInput1 + " / " + userInput2 + " = " + res);
                             Console.ReadLine();
-                        }
-                        else
-                        {
-                            Console.WriteLine("Ogiltig inmatning. Du kan inte dividera ett tal med 0");
-                            Console.ReadLine();
-                            return true;
-                        }
+                       
+
 
 
                         return true;
@@ -207,6 +202,11 @@ namespace Calculatortest
 
         }
 
+        private static Exception DivideByZeroException()
+        {
+            throw new NotImplementedException();
+        }
+
         public static double Sqrroot(double userInput)
         {
             var result = Math.Sqrt(userInput);
@@ -221,16 +221,10 @@ namespace Calculatortest
 
         public static double Division(double userInput1, double userInput2)
         {
-            if (userInput2 != 0)
-            {
+            
                 double res = userInput1 / userInput2;
                 return res;
-            }
-            else
-            {
-                double res = -1;
-                return res;
-            }
+            
         }
 
         public static double Multiplication(double userInput1, double userInput2)

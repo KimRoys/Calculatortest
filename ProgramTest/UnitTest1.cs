@@ -36,8 +36,8 @@ namespace ProgramTest
         {
             double num1 = 220;
             double num2 = 0;
-            double result = -1;
-            Assert.Equal(result, Program.Division(num1, num2));
+            double result = Program.Division(num1, num2);
+            Assert.True(double.IsInfinity(result));
         }
 
         [Fact]
